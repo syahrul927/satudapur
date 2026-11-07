@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState, type FormEvent } from "react";
+import { track } from "@vercel/analytics/react";
 import { APP_SCRIPT_URL, WA_URL } from "@/lib/site";
 
 /* Interest reasons — values are what Apps Script writes to the sheet column. */
@@ -49,6 +50,7 @@ export default function WaitlistForm() {
     /* No Apps Script URL yet — still let the user "send", so the flow can be
        demoed before the real endpoint exists. Mark it so we don't lie. */
     if (!APP_SCRIPT_URL) {
+      track("waitlist_submit", { reason: payload.alasan, mode: "demo" });
       setStatus("ok");
       form.reset();
       setReason("pos");
@@ -66,6 +68,7 @@ export default function WaitlistForm() {
         body: JSON.stringify(payload),
       });
       /* no-cors gives no status — trust it landed; sheet is source of truth */
+      track("waitlist_submit", { reason: payload.alasan, mode: "live" });
       setStatus("ok");
       form.reset();
       setReason("pos");
