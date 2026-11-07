@@ -4,6 +4,12 @@ import StockSyncDemo from "@/components/StockSyncDemo";
 import Nav from "@/components/Nav";
 import Reveal from "@/components/Reveal";
 import WaitlistForm from "@/components/WaitlistForm";
+import {
+  MonitorIcon,
+  PrinterIcon,
+  SyncIcon,
+  WalletIcon,
+} from "@/components/Icons";
 import { WA_URL } from "@/lib/site";
 
 function Check({ color = "#00B14F" }: { color?: string }) {
@@ -149,7 +155,7 @@ export default function Home() {
           </div>
           <div className="feat-grid">
             <article className="feat reveal" style={{ "--i": 0 } as React.CSSProperties}>
-              <span className="ficon">🖥️</span>
+              <span className="ficon"><MonitorIcon /></span>
               <h3>Satu layar, semua pesanan</h3>
               <p>
                 GrabFood, GoFood, ShopeeFood, dan dine-in masuk ke satu tablet POS yang
@@ -158,7 +164,7 @@ export default function Home() {
             </article>
 
             <article className="feat reveal" style={{ "--i": 1 } as React.CSSProperties}>
-              <span className="ficon">🖨️</span>
+              <span className="ficon"><PrinterIcon /></span>
               <h3>Auto-print ke dapur</h3>
               <p>
                 Pesanan online langsung tercetak ke printer dapur atau Kitchen Display —
@@ -167,7 +173,7 @@ export default function Home() {
             </article>
 
             <article className="feat feat-wide reveal" style={{ "--i": 2 } as React.CSSProperties}>
-              <span className="ficon">🔄</span>
+              <span className="ficon"><SyncIcon /></span>
               <h3>Sync harga & stok otomatis</h3>
               <p>
                 Ubah sekali di SatuDapur — harga baru dan status habis menyebar ke Grab,
@@ -177,7 +183,7 @@ export default function Home() {
             </article>
 
             <article className="feat feat-wide reveal" style={{ "--i": 3 } as React.CSSProperties}>
-              <span className="ficon">💰</span>
+              <span className="ficon"><WalletIcon /></span>
               <h3>Laporan laba bersih (anti-pusing)</h3>
               <p>
                 Dashboard otomatis memisahkan omzet kotor, potongan komisi platform, dan

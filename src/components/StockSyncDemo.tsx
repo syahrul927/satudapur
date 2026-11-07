@@ -43,8 +43,9 @@ export default function StockSyncDemo() {
       }, reducedMotion ? 0 : DELAYS[i])
     );
     note.textContent = habis
-      ? "✓ Terkirim ke 3 platform dalam < 1 detik — tanpa buka aplikasi lain."
+      ? "Terkirim ke 3 platform dalam < 1 detik — tanpa buka aplikasi lain."
       : 'Toggle di atas = satu tombol "Habis" di SatuDapur.';
+    note.classList.toggle("ok", habis);
     return () => timers.forEach(clearTimeout);
   }, [habis]);
 

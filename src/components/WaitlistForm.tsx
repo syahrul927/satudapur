@@ -3,6 +3,7 @@
 import { useRef, useState, type FormEvent } from "react";
 import { track } from "@vercel/analytics/react";
 import { APP_SCRIPT_URL, WA_URL } from "@/lib/site";
+import { PartyIcon } from "@/components/Icons";
 
 /* Interest reasons — values are what Apps Script writes to the sheet column. */
 const REASONS = [
@@ -80,7 +81,7 @@ export default function WaitlistForm() {
   if (status === "ok") {
     return (
       <div className="wl-card wl-done" role="status">
-        <span className="wl-done-emoji" aria-hidden="true">🎉</span>
+        <span className="wl-done-emoji" aria-hidden="true"><PartyIcon /></span>
         <h3>Anda masuk waiting list!</h3>
         <p>
           Kami kabari lewat WhatsApp begitu slot launching dibuka. Mau gerak
