@@ -1,6 +1,8 @@
-import OrderFeed from "@/components/OrderFeed";
+import HeroMock from "@/components/HeroMock";
 import Marquee from "@/components/Marquee";
 import StockSyncDemo from "@/components/StockSyncDemo";
+import PrintDemo from "@/components/PrintDemo";
+import SettleDemo from "@/components/SettleDemo";
 import Nav from "@/components/Nav";
 import Reveal from "@/components/Reveal";
 import WaitlistForm from "@/components/WaitlistForm";
@@ -71,7 +73,7 @@ export default function Home() {
             </div>
           </div>
 
-          <OrderFeed />
+          <HeroMock />
         </div>
       </header>
 
@@ -168,8 +170,9 @@ export default function Home() {
               <h3>Auto-print ke dapur</h3>
               <p>
                 Pesanan online langsung tercetak ke printer dapur atau Kitchen Display —
-                tanpa kasir menyentuh layar sama sekali.
+                tanpa kasir menyentuh layar sama sekali. Lihat simulasi:
               </p>
+              <PrintDemo />
             </article>
 
             <article className="feat feat-wide reveal" style={{ "--i": 2 } as React.CSSProperties}>
@@ -189,25 +192,7 @@ export default function Home() {
                 Dashboard otomatis memisahkan omzet kotor, potongan komisi platform, dan
                 estimasi uang yang benar-benar cair ke rekening Anda:
               </p>
-              <div className="fdemo">
-                <div className="settle">
-                  <div className="srow omzet">
-                    <span className="slabel">Omzet kotor</span>
-                    <span className="sbar"><span className="sfill" /></span>
-                    <span className="sval">Rp 1.240.000</span>
-                  </div>
-                  <div className="srow komisi">
-                    <span className="slabel">Komisi ±20%</span>
-                    <span className="sbar"><span className="sfill" /></span>
-                    <span className="sval">−Rp 248.000</span>
-                  </div>
-                  <div className="srow cair">
-                    <span className="slabel">Estimasi cair</span>
-                    <span className="sbar"><span className="sfill" /></span>
-                    <span className="sval">Rp 992.000</span>
-                  </div>
-                </div>
-              </div>
+              <SettleDemo />
             </article>
           </div>
         </div>
